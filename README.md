@@ -32,3 +32,5 @@ datetime | consumption
 * Python 3.6 or later
 * Django 1.11
 
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/111.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/222.jpg)
