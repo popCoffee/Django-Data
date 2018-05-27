@@ -2,7 +2,7 @@
 
 #### Background
 
-Electricity smart meters (in `data/consumption/<user_id>.csv`).  We want to help an energy provider view and analyse this data. One of the ways we do this is to visualise aggregated data
+Electricity smart meters (in `data/consumption/<user_id>.csv`).  We want to help an energy provider view and analyse this data. One of the ways we do this is to visualise aggregated data.
 
 
 Home page
