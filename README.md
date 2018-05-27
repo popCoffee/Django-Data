@@ -32,5 +32,11 @@ datetime | consumption
 * Python 3.6 or later
 * Django 1.11
 
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/111.jpg)
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/222.jpg)
+Home page
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/3.jpg)
+Individual analytics
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/2_1.jpg)
+Table
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/1.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/4.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/5.jpg)
