@@ -1,0 +1,123 @@
+{% extends 'consumption/layout.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django smart meter</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/detailColor.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tableSmall.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <div class="page-header">
+                <h1><a href="/">Analysis of Individual Energy Consumption</a></h1>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+<br/>
+<ul>
+  <li><a href="{% url 'homepg' %}">All Analytics</a></li>
+</ul>
+<br/>
+<ul>
+  <li><a href="{% url 'initial' %}">Home</a></li>
+</ul>
+
+<br/>
+<br/>
+<center>
+<h3>Table</h3>
+<br/>
+<table class="greyGridTable">
+    <tr>
+        <th><font size="4">I.D.</font></th>
+        <th><font size="4">Area</font></th>
+        <th><font size="4">Tariff</font></th>
+    </tr>
+
+    <tr>
+        <td>{{ latest_info_list.id }}</td>
+        <td>{{ latest_info_list.area }}</td>
+        <td>{{ latest_info_list.tariff }}</td>
+    </tr>
+</table>
+</center>
+<br/>
+<br/>
+<br/>
+<br/>
+<div id="myChart" style="width: 100%;"></div>
+<head>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<script>
+
+	//TESTER = document.getElementById('myChart');
+  var incoming = {{data_indiv|safe}}
+  var incoming_var = {{data_var|safe}}
+  var incoming_var_neg = {{data_var_neg|safe}}
+  var plottest = document.getElementById('myChart');
+
+  //1 std dev above
+  var trace1 = {
+    x: incoming_var['x'],
+    y: incoming_var['y'],
+    line: {width: 0},
+    name: 'Excessive'
+
+  };
+  //actual data
+  var trace2 = {
+    x: incoming['x'],
+    y: incoming['y'],
+    fill: 'tonexty',
+    fillcolor: 'rgb(240, 240, 150)',
+    type: 'scatter',
+    line: {color: 'rgb(55, 128, 191)', width: 2.5},
+    name:'consumption'
+  };
+  //1std dev below
+  var trace3 = {
+    x: incoming_var_neg['x'],
+    y: incoming_var_neg['y'],
+    fill: 'tonexty',
+    type: 'scatter',
+    fillcolor: 'rgb(230, 240, 150)',
+    line: {width: 0},
+    name: 'Conservative'
+  };
+
+  var layout = {
+    title: 'Individual Consumption',
+    xaxis: {
+    showgrid: false,
+    showticklabels: true,
+    showline: true,
+    title: 'Date'},
+    yaxis: {
+    showgrid: false,
+    zeroline: false,
+    showline: true,
+    showticklabels: true,
+    title: 'Energy Used Wh'
+},
+    autosize: true,
+    showlegend: false
+  };
+
+  var data = [trace1, trace2, trace3];
+
+  Plotly.newPlot('myChart', data, layout);
+
+
+</script>
+
+{% endblock %}

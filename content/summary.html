@@ -1,0 +1,88 @@
+{% extends 'consumption/layout.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/detailColor.css' %}">
+        <link rel="stylesheet" href="{% static 'css/table.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <div class="page-header">
+                <h1><a href="/"> Smart Meter Analysis</a></h1>
+            </div>
+        </div>
+    </body>
+</html>
+
+<br/>
+<br/>
+
+<h3>Enter consumer id to get individual data</h3>
+<form action = "{% url 'detail' %}">
+  <input type = "text" name = "originaltxt"/>
+  <br />
+  <input type = "submit" value = "Individual consumer id"/>
+</form>
+
+<br/>
+
+<h3>Table</h3>
+<br/>
+
+<table class="darkTable">
+    <tr>
+        <th><font size="4" color="gray"><center>I.D.</center></font></th>
+    </tr>
+    {% for item in latest_question_list %}
+    <tr>
+        <td>{{ item.id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div id="myChart"></div>
+<head>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<script>
+
+	//TESTER = document.getElementById('myChart');
+  var incomingS = {{data|safe}}
+
+
+  var traceSum = {
+    x: incomingS['x'],
+    y: incomingS['y'],
+    line: {width: 6},
+    name: 'Excessive'
+  };
+  var layout = {
+    xaxis: {
+    showline: true,
+    showgrid: false,
+    title: 'Date'
+    },
+    yaxis: {
+    showline: true,
+    showgrid: false,
+    title: ' Energy (Wh)'
+    },
+    autosize: true,
+    showlegend: false
+  };
+  Plotly.newPlot('myChart', [traceSum], layout);
+
+</script>
+
+{% endblock %}

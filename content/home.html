@@ -1,0 +1,36 @@
+
+{% block content %}
+{% load staticfiles %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/homecss.css' %}">
+<body>
+<main id="cd-main-content">
+	<section id="cd-intro">
+		<header class="cd-header">
+      <ul>
+        <li><a href="{% url 'homepg' %}"><h1>All Analytics<br/><br/><h1></a></li>
+      </ul>
+			<div id="cd-logo"><a href="#0"><img src="" alt="Logo"></a></div>
+			<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+		</header>
+		<div class="cd-blurred-bg"></div>
+    <h1> Smart Meter Analysis </h1>
+	</section> <!-- cd-intro -->
+</main>
+
+<div class="cd-shadow-layer"></div>
+<nav id="main-nav">
+
+	<ul>
+		<li><a href="#0"><span>Intro</span></a></li>
+		<li><a href="#0"><span>Total Energy Usage</span></a></li>
+		<li><a href="#0"><span>Your Energy Usage</span></a></li>
+		<li><a href="#0"><span>Contact us</span></a></li>
+	</ul>
+	<a href="#0" class="cd-close-menu">Close<span></span></a>
+</nav>
+</body>
+
+{% endblock %}
