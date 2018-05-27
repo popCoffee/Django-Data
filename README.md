@@ -6,13 +6,13 @@ Electricity smart meters (in `data/consumption/<user_id>.csv`).  We want to help
 
 
 Home page
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/3.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/3.jpg)
 Individual analytics
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/2_1.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/2_1.jpg)
 Table
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/1.jpg)
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/4.jpg)
-![alt text](https://github.com/popCoffee/Django-Data/blob/master/5.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/1.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/4.jpg)
+![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/5.jpg)
 
 ### The data
 
