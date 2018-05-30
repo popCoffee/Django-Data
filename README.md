@@ -4,12 +4,17 @@
 
 Electricity smart meters (in `data/consumption/<user_id>.csv`).  We want to help an energy provider view and analyse this data. One of the ways we do this is to visualise aggregated data.
 
-
+```
 Home page
+```
 ![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/3.jpg)
+```
 Individual analytics
+```
 ![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/2_1.jpg)
+```
 Table
+```
 ![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/1.jpg)
 ![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/4.jpg)
 ![alt text](https://github.com/popCoffee/Django-Data/blob/master/pic/5.jpg)
